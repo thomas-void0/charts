@@ -37,4 +37,3 @@ var nameColor = {
     schools: "#65789B",
 };
 var colors = Array.from(names, function (name) { return nameColor[name]; });
-// 4，==================================== 映射 ====================================

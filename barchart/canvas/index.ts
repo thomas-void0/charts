@@ -49,5 +49,3 @@ const colors = Array.from(
   names as any,
   (name: keyof typeof nameColor) => nameColor[name]
 );
-
-// 4，==================================== 映射 ====================================
