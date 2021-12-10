@@ -37,3 +37,30 @@ var nameColor = {
     schools: "#65789B",
 };
 var colors = Array.from(names, function (name) { return nameColor[name]; });
+// 4，==================================== 绘制 ====================================
+var canvas = document.getElementById("canvas");
+// 设置canvas样式
+canvas.style.width = containerWidth + "px";
+canvas.style.height = containerHeight + "px";
+// 下面把画布宽高设置为样式宽高的两倍主要是为了解决模糊问题
+canvas.width = containerWidth * 2;
+canvas.height = containerHeight * 2;
+var context = canvas.getContext("2d");
+context.scale(2, 2); // 抵消将画布宽高设置为样式宽高两倍的影响
+context.translate(margin, margin); // 将坐标原点移动到绘制图表的区域
+for (var _i = 0, indices_1 = indices; _i < indices_1.length; _i++) {
+    var index = indices_1[_i];
+    var color = colors[index];
+    var x = xs[index];
+    var barHeight = barHeights[index];
+    var value = values[index];
+    // 绘制条
+    context.fillStyle = color;
+    context.fillRect(x, y - barHeight, barWidth, barHeight);
+    // 绘制值
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillStyle = "white";
+    context.font = "25px PingFangSC-Regular, sans-serif";
+    context.fillText(value, x + barWidth / 2, y - barHeight / 2);
+}

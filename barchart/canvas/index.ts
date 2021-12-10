@@ -49,3 +49,36 @@ const colors = Array.from(
   names as any,
   (name: keyof typeof nameColor) => nameColor[name]
 );
+
+// 4，==================================== 绘制 ====================================
+const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+
+// 设置canvas样式
+canvas.style.width = containerWidth + "px";
+canvas.style.height = containerHeight + "px";
+
+// 下面把画布宽高设置为样式宽高的两倍主要是为了解决模糊问题
+canvas.width = containerWidth * 2;
+canvas.height = containerHeight * 2;
+
+const context = canvas.getContext("2d")!;
+context.scale(2, 2); // 抵消将画布宽高设置为样式宽高两倍的影响
+
+context.translate(margin, margin); // 将坐标原点移动到绘制图表的区域
+
+for (const index of indices) {
+  const color = colors[index];
+  const x = xs[index];
+  const barHeight = barHeights[index];
+  const value = values[index];
+
+  // 绘制条
+  context.fillStyle = color;
+  context.fillRect(x, y - barHeight, barWidth, barHeight);
+  // 绘制值
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  context.fillStyle = "white";
+  context.font = "25px PingFangSC-Regular, sans-serif";
+  context.fillText(value, x + barWidth / 2, y - barHeight / 2);
+}
