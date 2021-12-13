@@ -1,15 +1,15 @@
-/sparrow/node_modules
-/sparrow/dist
-/sparrow/esm
-/sparrow/lib
+/node_modules
+/dist
+/esm
+/lib
 
 # Logs
 logs
-/sparrow/*.log
-/sparrow/npm-debug.log*
-/sparrow/yarn-debug.log*
-/sparrow/yarn-error.log*
+/*.log
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
 
 
 # Test
-/sparrow/coverage
+/coverage
