@@ -1,1 +1,4 @@
 /sparrow/node_modules
+/sparrow/dist
+/sparrow/esm
+/sparrow/lib
