@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "lint": "eslint --fix"
   },
   "keywords": [],
@@ -16,6 +16,10 @@
     "@babel/preset-env": "^7.16.4",
     "eslint": "^8.4.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3"
+    "eslint-plugin-import": "^2.25.3",
+    "jest": "^26.0.1",
+    "jest-electron": "^0.1.12",
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0"
   }
 }
