@@ -7,7 +7,8 @@
     "test": "jest --coverage",
     "lint": "eslint --fix",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "run-s lint test build"
   },
   "keywords": [],
   "author": "",
