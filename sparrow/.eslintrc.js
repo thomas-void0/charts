@@ -14,4 +14,9 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 0,
   },
+  ignore: [
+    "./__test__/*",
+    "./jest.config.js",
+    "./rollup.config.js"
+  ]
 };
