@@ -2,3 +2,14 @@
 /sparrow/dist
 /sparrow/esm
 /sparrow/lib
+
+# Logs
+logs
+/sparrow/*.log
+/sparrow/npm-debug.log*
+/sparrow/yarn-debug.log*
+/sparrow/yarn-error.log*
+
+
+# Test
+/sparrow/coverage
